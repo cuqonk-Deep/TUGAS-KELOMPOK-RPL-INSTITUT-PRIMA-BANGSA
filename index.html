@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('matches')">Matches</a></li>
+            <li><a href="#" onclick="showSection('book-ticket')">Book Ticket</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            <li><a href="admin.html" onclick="showSection('admin-login')">Admin</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <section id="home" class="active">
+            <h2>Selamat datang di Sistem Pemesanan Tiket Sepak Bola</h2>
+            <p>Ayok Ramaikan dan Dukung team jagoan kalian !!!</p>
+            <p>Pesan sekarang tiket nya sebelum kehabisan . Amankan tempat duduk Anda untuk pertandingan mendatang , Pesan tiket Anda secara daring dan nikmati pertandingannya!</p>
+        </section>
+        <section id="matches">
+            <h2>Pertandingan Mendatang</h2>
+            <table>
+               <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Pertandingan</th>
+                        <th>Lokasi</th>
+                        <th>Tiket Tersedia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-12-20</td>
+                        <td>Team PTIK 5A vs Team PTIK 5B</td>
+                        <td>Stadion Utama Gelora Bung Karno</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>2024-12-28</td>
+                        <td>Team PBI 5B vs Team PBI 5A</td>
+                        <td>Stadion Gelora Bandung Lautan Api</td>
+                        <td>350</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="book-ticket">
+            <h2>Pesan Tiket Anda</h2>
+            <p>Setelah mengisi format di bawah, kamu akan menerima kode verifikasi melalui email untuk melanjutkan ke pembayaran.</p>
+            <form id="booking-form" onsubmit="handleBooking(event)">
+                <label for="match">Pilih pertandingan:</label>
+                <select name="match" id="match" required>
+                    <option value="">-- Pilih Pertandingan --</option>
+                    <option value="Team PTIK 5A vs Team PTIK 5B">Team PTIK 5A vs Team PTIK 5B</option>
+                    <option value="Team PBI 5B vs Team PBI 5A">Team PBI 5B vs Team PBI 5A</option>
+                </select>
+                <label for="name">Full Nama:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="quantity">Jumlah Tiket:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+                
+                <button type="submit">Pesan sekarang</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Hubungi kami :</h2>
+            <p>Jangan ragu bila ada perlu yang di tanyakan :</p>
+            <ul>
+                <li>Email : </li>
+                <p><a href="#" onclick="openEmail1()">1. syaaabdilah@gmail.com</a></p>
+                <p><a href="#" onclick="openEmail2()">2. arafpratama14@gmail.com</a></p>
+                <p><a href="#" onclick="openEmail3()">3.  cuqonkbadict06@gmail.com</a></p>
+                <li>Whatsapp : </li>
+                <p><a href="#" onclick="openWhatsapp1()">1. 081223062748(Yusya)</a></p>
+                <p><a href="#" onclick="openWhatsapp2()">2. 085697835731(Arap)</a></p>
+                <p><a href="#" onclick="openWhatsapp3()">3. 083184857676(Furqon)</a></p>
+                <li>Alamat : <a href="#" onclick="openGooglemaps()">Jl. Brigjen Darsono, Bypass Jl. Cideng Raya No.20, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon, Jawa Barat 45153</a></li>
+            </ul>
+        </section>
+        <footer>
+            <p>&copy; 2024 Football Ticket Booking. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

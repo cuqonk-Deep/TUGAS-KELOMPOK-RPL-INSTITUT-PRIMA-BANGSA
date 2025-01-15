@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="showSection('admin-login')">Admin</a></li>
+            <li><a href="index.html" onclick="showSection('home')">Kembali</a></li>
+        </ul>
+    </div>
+    <div id="admin-sidebar">
+        <ul>
+            <li><a href="#" onclick="showSection('admin-panel')">Admin Panel</a></li>
+        </ul>
+    </div>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <div class="content">
+        <section id="admin-login" class="active">
+            <h2>Admin Login</h2>
+            <form id="admin-form" onsubmit="handleAdminLogin(event)">
+                <label for="admin-username">Username:</label>
+                <input type="text" id="admin-username" name="admin-username" required>
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" name="admin-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <section id="admin-panel">
+            <h2>Admin Panel</h2>
+            <table id="booking-list">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Pertandingan</th>
+                        <th>Jumlah Tiket</th>
+                        <th>Total Harga</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button type="submit" id="LogOut">
+            <li><a href="#" onclick="handleAdminLogout()">Log Out</a></li>
+            </button>
+        </section>
+        <footer>
+            <p>&copy; 2024 Football Ticket Booking. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
